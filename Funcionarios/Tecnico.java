@@ -8,7 +8,7 @@ public class Tecnico extends Assistente {
         this.bonusSalarial = bonusSalarial;
     }
     
-    public float ganhoAnual(int meses){
+    public float ganhoAnual(){
         return (getSalario()+bonusSalarial) * 13;
     }
 
