@@ -1,38 +1,30 @@
 package Agenda;
 
+import java.util.ArrayList;
+
 public class Agenda {
-    private EntradaEmAgenda[] agenda = new EntradaEmAgenda[10];
+   ArrayList<EntradaEmAgenda> agenda = new ArrayList<>();
+   
+   public void compromissos(EntradaEmAgenda agenda){
+        this.agenda.add(agenda);
+   }
 
-    public void compromissos(EntradaEmAgenda agenda) {
-        for (int i = 0; i < this.agenda.length; i++) {
-            if (this.agenda[i] == null) {
-                this.agenda[i] = agenda;
-                break;
-            }
+   public void mostraDados(){
+        for (EntradaEmAgenda agendas : agenda) {
+            System.out.println(agendas);
         }
-    }
+   }
 
-    public void mostraDados(){
-        for (int i = 0; i < agenda.length; i++) {
-            if (agenda[i] != null) {
-                System.out.println(agenda[i].toString() + "\n");
-            }
-            
-        }
-    }
+   public void listaDia(int dia, int mes, int ano){
 
-    public void listaDia(int dia, int mes, int ano){
         EntradaEmAgenda.verificaDia(dia, mes, ano);
         EntradaEmAgenda.verificaMes(mes);
         EntradaEmAgenda.verificaAno(ano);
 
-        for (int i = 0; i < agenda.length; i++) {
-            if (agenda[i] != null) {
-                if (dia == agenda[i].getDia() && mes == agenda[i].getMes() && ano == agenda[i].getAno()) {
-                    System.out.println(agenda[i].toString());
-                }
+        for (EntradaEmAgenda agendas : agenda) {
+            if (agendas.getDia() == dia && agendas.getMes() == mes && agendas.getAno() == ano) {
+                System.out.println(agendas);
             }
         }
-    }
-
+   }
 }
