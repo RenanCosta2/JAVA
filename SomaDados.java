@@ -11,7 +11,6 @@ public class SomaDados {
 
             int somar = n1 + n2;
 
-            System.out.println(somar);
             if (somar == 2) {
                 soma[0]++;
             } else if(somar == 3){
